@@ -9,32 +9,41 @@ else if student_score >=60 and <80, print "B" division
 else if student_score>=40 and <60, print "C" division
 
 else if student_score<40, print "F" division. */
+
+import java.util.Scanner;
+
 public class methodchallenge2 {
-    public static void main(String[] args){
-        
-        String student_name = "Charan";
-        int student_score = 85;
-        char student_division = studentgrade(student_score);
-        studentdetails(student_name, student_division);
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter student name ");
+        String student_name = sc.nextLine();
+        System.out.println("Enter " + student_name + " score");
+        int student_score = sc.nextInt();
+        char student_divison = calculateStudentDivison(student_score);
+ 
+        displayRank(student_name, student_divison);
     }
-    
-    public static char studentgrade(int score){
+ 
+    public static void displayRank(String name, char divison) {
+        System.out.println(name + " has secured " + divison + " divison");
+ 
+    }
+ 
+    public static char calculateStudentDivison(int student_score) {
         char division;
-
-        if(score >= 80){
+        if (student_score >= 80) {
             division = 'A';
-        }else if(score >= 60 && score <= 80){
+            return division;
+        } else if (student_score < 80 && student_score >= 60) {
             division = 'B';
-        }else if(score >= 40 && score <60){
+            return division;
+        } else if (student_score < 60 && student_score >= 40) {
             division = 'C';
-        }else{
+            return division;
+        } else if (student_score < 40) {
             division = 'F';
+            return division;
         }
-        
-        return division;
-    }
-
-    public static void studentdetails(String name, char grade){
-        System.out.println("The student name is : " + name + "The student division is : " + grade);
+        return 0;
     }
 }
