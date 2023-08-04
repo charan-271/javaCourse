@@ -36,7 +36,7 @@ public class methodchallenge2 {
             return division;
         } else if (student_score < 80 && student_score >= 60) {
             division = 'B';
-            return division;
+            return division;m
         } else if (student_score < 60 && student_score >= 40) {
             division = 'C';
             return division;
